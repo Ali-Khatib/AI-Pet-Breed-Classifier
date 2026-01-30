@@ -1,52 +1,36 @@
-# LLM-Based Email Summarization and Response Generation
+AI-Pet-Breed-Classifier
+A machine learning-based pet image classification system that processes images, extracts labels, and applies deep learning classifiers to identify pet breeds and species.
 
-This project implements an LLM-powered email assistant designed to help users efficiently understand and respond to long or complex emails. It combines email summarization with controlled response generation, ensuring accuracy, relevance, and adherence to user-defined constraints. The system is built using LangChain and integrates Meta LLaMA 3.1 via the Groq API for fast, high-quality natural language processing.
+This project is a pet image classification system that utilizes deep learning models to identify and categorize images of pets. The system processes image datasets, extracts relevant labels, and applies a classifier to predict the category of each image. It includes modules for adjusting classification results, calculating statistics, and handling command-line arguments for flexible execution. The project also features utilities for timing execution and printing results. Designed for educational and experimental purposes, this tool helps users explore machine learning concepts in image recognition.
 
----
+adjust_results4_isadog.py:
 
-## 🚀 Key Features
+adjust_results4_isadog: Updates classification results by identifying whether the classified label is a dog.
+calculates_results_stats.py:
 
-- Summarizes long emails into concise, meaningful summaries  
-- Handles long inputs using recursive text chunking  
-- Generates response emails strictly based on summarized content  
-- User-configurable response length (short, medium, long)  
-- User-configurable tone (formal, casual, polite)  
-- Prevents hallucinations through strict prompt constraints  
-- Preserves names and sender/recipient roles  
-- Supports pasted email text or uploaded `.txt` files  
-- Exports generated responses as downloadable text files  
+calculates_results_stats: Computes statistical measures (accuracy, precision, recall) based on classification results.
+check_images.py:
 
----
+main: The main entry point for image classification processing.
+classifier.py:
 
-## 🧠 System Architecture
+classifier: A function that utilizes a pre-trained model to classify images.
+classify_images.py:
 
-Email Input → Text Chunking → Chunk-Level Summarization → Final Summary → Controlled Response Generation → Exported Response
+classify_images: Assigns labels to images using a deep learning model.
+get_input_args.py:
 
----
+get_input_args: Parses command-line arguments for running the script.
+get_pet_labels.py:
 
-## 🧪 Model & Frameworks
+get_pet_labels: Extracts pet labels from image filenames.
+print_functions_for_lab_checks.py:
 
-- LLM: Meta LLaMA 3.1 (8B Instant)  
-- LLM Provider: Groq  
-- Framework: LangChain  
-- Backend Language: Python  
+check_command_line_arguments: Verifies that command-line arguments are processed correctly.
+check_creating_pet_image_labels: Ensures pet image labels are correctly extracted.
+check_classifying_images: Confirms that images are classified accurately.
+check_classifying_labels_as_dogs: Validates whether classifications correctly distinguish between dogs and non-dogs.
+check_calculating_results: Ensures result calculations are accurate.
+print_results.py:
 
----
-
-## 📦 Tech Stack
-
-- Python  
-- LangChain  
-- Groq API  
-- Meta LLaMA 3.1  
-- HuggingFace Transformers  
-- PyTorch  
-- Jupyter Notebook  
-
----
-
-## 🔑 API Key Setup
-
-This project requires a free Groq API key.
-
-Create a key at: https://console.groq.com/keys
+print_results: Displays classification outcomes in a structured format.
