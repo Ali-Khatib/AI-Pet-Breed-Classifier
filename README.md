@@ -1,44 +1,82 @@
-AI-Pet-Breed-Classifier
+# AI-Pet-Breed-Classifier
 
-AI-Pet-Breed-Classifier is a machine learning–based image classification system that identifies pet species and dog breeds using deep learning. The project processes pet images, extracts labels from filenames, and applies a pre-trained convolutional neural network to classify each image. It is designed to demonstrate core concepts in computer vision, model evaluation, and pipeline-based ML system design.
+AI-Pet-Breed-Classifier is a machine learning–based image classification system that identifies pet species and dog breeds using deep learning. The project processes pet images, extracts ground-truth labels from filenames, applies a pre-trained convolutional neural network for classification, and evaluates model performance using standard metrics. Designed for educational and experimental purposes, this project demonstrates a complete end-to-end image classification pipeline.
 
-The system follows a structured workflow: images are loaded from a dataset, true labels are extracted from filenames, and a deep learning classifier predicts labels for each image. The results are then refined to determine whether each image represents a dog or a non-dog, enabling both breed-level and species-level evaluation. Statistical metrics such as accuracy, precision, and recall are computed to assess model performance. The project also supports command-line execution, making it flexible and easy to test with different datasets and models.
+## Features
 
-This project is intended for educational and experimental use, providing hands-on exposure to image classification, result analysis, and modular ML system development.
+- Classifies pet images using a pre-trained deep learning model  
+- Extracts true pet labels directly from image filenames  
+- Distinguishes between dogs and non-dogs  
+- Supports dog breed classification  
+- Computes evaluation metrics including accuracy, precision, and recall  
+- Modular and pipeline-based design  
+- Command-line interface for flexible execution  
+- Built-in validation and result-checking utilities  
 
-Project Modules
-adjust_results4_isadog.py
+## System Workflow
 
-Updates classification results by determining whether the predicted label corresponds to a dog, enabling dog vs. non-dog analysis.
+Image Dataset → Label Extraction → Deep Learning Classification → Dog / Non-Dog Identification → Statistical Evaluation → Result Output
 
-calculates_results_stats.py
+## Project Structure
 
-Computes performance statistics such as accuracy, precision, recall, and related evaluation metrics based on classification outcomes.
+AI-Pet-Breed-Classifier/
+├── adjust_results4_isadog.py  
+├── calculates_results_stats.py  
+├── check_images.py  
+├── classifier.py  
+├── classify_images.py  
+├── get_input_args.py  
+├── get_pet_labels.py  
+├── print_functions_for_lab_checks.py  
+├── print_results.py  
+└── README.md  
 
-check_images.py
+## Module Descriptions
 
-Serves as the main entry point for running the full image classification pipeline.
+adjust_results4_isadog.py  
+Updates classification results by determining whether the predicted label corresponds to a dog.
 
-classifier.py
+calculates_results_stats.py  
+Computes statistical performance measures such as accuracy, precision, and recall.
 
-Contains the classifier function that applies a pre-trained deep learning model to classify pet images.
+check_images.py  
+Acts as the main entry point for executing the full image classification pipeline.
 
-classify_images.py
+classifier.py  
+Implements the classifier function that applies a pre-trained deep learning model to classify pet images.
 
-Manages the process of assigning predicted labels to images using the selected deep learning model.
+classify_images.py  
+Handles assigning predicted labels to images using the selected deep learning model.
 
-get_input_args.py
+get_input_args.py  
+Parses and validates command-line arguments for flexible configuration.
 
-Parses and validates command-line arguments, allowing flexible configuration of input directories, model selection, and output options.
+get_pet_labels.py  
+Extracts ground-truth pet labels from image filenames.
 
-get_pet_labels.py
+print_functions_for_lab_checks.py  
+Provides validation functions to verify correct behavior at each pipeline stage.
 
-Extracts true pet labels from image filenames for use as ground truth during evaluation.
+print_results.py  
+Formats and displays classification results and evaluation statistics.
 
-print_functions_for_lab_checks.py
+## How to Run
 
-Includes validation functions to ensure correct behavior at each pipeline stage, such as argument parsing, label extraction, classification accuracy, and result computation.
+python check_images.py --dir images/ --arch vgg --dogfile dognames.txt
 
-print_results.py
+## Learning Outcomes
 
-Formats and displays classification results and performance statistics in a clear, readable manner.
+- Understanding image classification pipelines  
+- Using pre-trained deep learning models  
+- Evaluating models with standard metrics  
+- Building modular and testable ML systems  
+- Applying command-line interfaces in ML workflows  
+
+## Author
+
+Ali Khatib  
+AI / Machine Learning & Software Engineering  
+
+## License
+
+This project is intended for educational and experimental use.
