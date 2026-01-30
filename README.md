@@ -50,9 +50,3 @@ Email Input → Text Chunking → Chunk-Level Summarization → Final Summary �
 This project requires a free Groq API key.
 
 Create a key at: https://console.groq.com/keys
-
-Set the environment variable:
-
-Linux / macOS:
-```bash
-export GROQ_API_KEY="your_api_key_here"
